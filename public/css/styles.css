@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Cormorant Infant";
+  src: url("/font-family/CormorantInfant-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/font-family/Montserrat-Regular.woff2"),
+    url("/font-family/Montserrat-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Miama Nueva";
+  src: url("/font-family/MiamaNueva.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --white: #ffffff;
+  --peach50: #f9f5f4;
+  --peach100: #f3cdc4;
+  --pink100: #ffebe6;
+  --gray100: #cccccc;
+  --golg100: #dcc6a0;
+  --gold150: #988e7b;
+  --black100: #473f30;
+  --black: #000;
+}
+
+._container {
+  width: min(100% - 5px, 1440px);
+  margin: 0 auto;
+}
+
+h1 {
+  /* font-size: 60px; */
+  font-size: clamp(
+    44px,
+    calc(44px + (60 - 44) * ((100vw - 1024px) / (1440 - 1024))),
+    60px
+  );
+  color: var(--gold150);
+  text-transform: uppercase;
+  font-family: "Cormorant Infant";
+  font-weight: 400;
+  padding: clamp(
+      10px,
+      calc(10px + (50 - 10) * ((100vw - 1024px) / (1440 - 1024))),
+      50px
+    )
+    0 20px 0;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  color: var(--gold150);
+  font-family: "Cormorant Infant";
+  font-size: 52px;
+  font-weight: 400;
+  padding-bottom: 80px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--gray100);
+  margin: 40px 0;
+}
+
+.consultation-button {
+  width: 318px;
+  height: 66px;
+  border: 1px solid var(--gold150);
+  background: var(--peach50);
+  color: var(--black100);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.consultation-button:hover {
+  background: var(--white);
+  border: 1px solid var(--black100);
+  color: var(--black100);
+}
+
+.consultation-button:active {
+  background: var(--black100);
+  border: 1px solid var(--black);
+  color: var(--peach50);
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 924px) {
+  h2 {
+    font-size: 28px;
+    padding-bottom: 24px;
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+
+  .consultation-button {
+    font-size: 15px;
+    width: 100%;
+    height: 50px;
+  }
+}
