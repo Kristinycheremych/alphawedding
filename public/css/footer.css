@@ -23,6 +23,15 @@
   gap: 4px;
 }
 
+.content-contacts a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-contacts a:hover {
+  text-decoration: underline;
+}
+
 .footer-content p {
   color: var(--gold150);
   font-size: 20px;
