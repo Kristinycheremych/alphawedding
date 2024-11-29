@@ -49,10 +49,6 @@
   .about-text p {
     padding: 0;
   }
-  /* .about-content {
-    display: grid;
-    grid-template-columns: 1fr ;
-  } */
 }
 @media (max-width: 924px){
   .about-container {
@@ -110,13 +106,23 @@
   .about-image img:nth-child(1) {
     width: 164px;
     height: 229px;
-    padding-right: 10px;
   }
 
   .about-image img:nth-child(2) {
     width: 169px;
     height: 148px;
     position: absolute;
+    padding-left: 10px;
+  }
+}
+
+
+@media (max-width: 375px){
+  .about-image img:nth-child(1) {
+    padding-right: 10px;
+  }
+
+  .about-image img:nth-child(2) {
     padding-left: 10px;
   }
 }
