@@ -39,6 +39,11 @@
 }
 
 @media (max-width: 1024px) {
+  #about, #about-en {
+    position: relative;
+    padding-top: 72px; /* Отступ для контента */
+    margin-top: -72px; /* Компенсация для якорной ссылки */
+  }
   .about-content {
     padding: 0;
   }
@@ -82,6 +87,11 @@
 }
 
 @media (max-width: 400px) {
+  #about, #about-en {
+    position: relative;
+    padding-top: 72px; /* Отступ для контента */
+    margin-top: -72px; /* Компенсация для якорной ссылки */
+  }
   .about-content {
     display: grid;
     grid-template-columns: 1fr;

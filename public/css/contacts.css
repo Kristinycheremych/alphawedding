@@ -105,13 +105,6 @@
 }
 
 @media (max-width: 1024px) {
-  #contacts,
-  #contacts-en {
-    position: relative;
-    padding-top: 20px; 
-    margin-top: -20px;
-  }
-
   .contact-container {
     padding: 48px 24px;
   }
