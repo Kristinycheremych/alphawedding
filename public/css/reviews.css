@@ -85,6 +85,12 @@
 }
 
 @media (max-width: 1024px) {
+  #reviews, #reviews-en{
+    position: relative;
+    padding-top: 72px; /* Отступ для контента */
+    margin-top: -72px; /* Компенсация для якорной ссылки */
+  }
+  
   .reviews-container {
     padding: 64px 24px 48px 24px;
   }
@@ -103,6 +109,12 @@
 }
 
 @media (max-width: 865px) {
+  #reviews, #reviews-en{
+    position: relative;
+    padding-top: 72px; /* Отступ для контента */
+    margin-top: -72px; /* Компенсация для якорной ссылки */
+  }
+
   .reviews-container {
     padding: 24px 16px;
     display: flex;

@@ -114,13 +114,31 @@
 }
 
 @media (max-width: 1024px) {
+  .hero-section {
+    margin-top: 72px !important;
+  }
+
   .logo {
     width: 125px;
     height: 48px;
   }
+
   .header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 12px 16px;
+    position: fixed; /* Закрепляем контейнер */
+    top: 0; /* Закрепляем в верхней части экрана */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Делаем его выше других элементов */
+    background: var(--peach50); /* Цвет фона */
+    border-bottom: 1px solid rgba(152, 142, 123, 0.2); /* Нижняя граница */
+    height: 72px;
   }
+
   .content-container {
     max-width: 477px;
   }
@@ -128,7 +146,7 @@
   .menu {
     display: none;
   }
-  
+
   .photo-container img {
     min-width: 479px;
     max-height: 616px;
@@ -174,18 +192,27 @@
 
   /* Скрываем мобильное меню по умолчанию */
   .menu-mobile {
-    position: absolute;
-    display: none;
-    flex-direction: column;
+    position: fixed;
+    top: 72px;
     width: 100%;
     padding: 20px;
     background: var(--peach50);
-    z-index: 1;
+    z-index: 1000;
     height: auto;
+    border-top: 1px solid rgba(152, 142, 123, 0.2);
+
+    /* Скрыто по умолчанию */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; 
   }
 
   .menu-mobile.active {
-    transform: translateY(0);
+    visibility: visible; 
+    opacity: 1; 
+    transform: translateY(0); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .menu-mobile ul {
@@ -212,7 +239,7 @@
     color: var(--gold150);
   }
 
-  /* Кнопка меню */
+  /* Стили для кнопки меню */
   .menu-toggle {
     background: none;
     border: none;
@@ -220,40 +247,33 @@
     position: relative;
   }
 
-  /* Стили для иконок */
-  .menu-icon {
-    width: 30px;
-    height: 30px;
-    display: block;
-  }
-
-  /* Иконка меню по умолчанию видна */
-  .menu-icon--menu {
-    display: block;
-  }
-
-  /* Иконка крестика скрыта по умолчанию */
-  .menu-icon--close {
+  /* Скрываем иконки по умолчанию */
+  .menu-toggle .menu-icon--close {
     display: none;
   }
 
-  /* Когда меню открыто, показываем крестик и скрываем меню */
+  /* Показываем иконку крестика, когда меню открыто */
   .menu-toggle.open .menu-icon--menu {
-    display: none; /* Скрываем иконку меню */
+    display: none;
   }
 
   .menu-toggle.open .menu-icon--close {
-    display: block; /* Показываем иконку крестика */
+    display: block;
   }
 }
 
 @media (max-width: 879px) {
+  .hero-section {
+    margin-top: 80px !important;
+  }
+
   .hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 16px;
+    margin-top: 100px;
   }
 
   .blok-header h1 {
@@ -296,5 +316,4 @@
   #language-switcher button {
     font-size: 15px;
   }
-  
 }
