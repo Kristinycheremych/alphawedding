@@ -200,19 +200,18 @@
     z-index: 1000;
     height: auto;
     border-top: 1px solid rgba(152, 142, 123, 0.2);
-
     /* Скрыто по умолчанию */
     visibility: hidden;
     opacity: 0;
-    transform: translateY(-20px); 
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; 
+    transform: translateY(-20px);
+    transition: transform 0.4s ease, visibility 0s 0.4s;
   }
 
   .menu-mobile.active {
-    visibility: visible; 
-    opacity: 1; 
-    transform: translateY(0); 
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
   .menu-mobile ul {
@@ -225,6 +224,7 @@
 
   .menu-mobile ul li {
     margin: 10px 0;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .menu-mobile ul li a {
@@ -233,10 +233,29 @@
     font-size: 20px;
     color: var(--black100);
     transition: color 0.3s ease;
+
+    /* Убираем стандартное поведение ссылки при нажатии */
+    text-decoration: none;
   }
 
-  .menu-mobile ul li a:hover {
+  /* Состояние для активных ссылок */
+  .menu-mobile ul li a.active {
     color: var(--gold150);
+  }
+
+  /* Состояние при активном клике на ссылку (во время нажатия) */
+  .menu-mobile ul li a:active {
+    color: var(--gold150);
+  }
+
+  /* Состояние при фокусе (для клавиатуры или при переходе фокуса) */
+  .menu-mobile ul li a:focus {
+    color: var(--black); 
+  }
+
+  /* Убираем синюю обводку на некоторых браузерах */
+  .menu-mobile ul li a:focus-visible {
+    outline: none;
   }
 
   /* Стили для кнопки меню */
