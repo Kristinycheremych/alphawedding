@@ -52,3 +52,26 @@ function showSlides(n) {
     );
   }
 }
+
+// Добавление функционала для жестов
+let touchStartX = 0; // Начальная позиция касания
+let touchEndX = 0;   // Конечная позиция касания
+
+// Обработчик события начала касания
+document.addEventListener("touchstart", (event) => {
+  touchStartX = event.changedTouches[0].screenX;
+});
+
+// Обработчик события завершения касания
+document.addEventListener("touchend", (event) => {
+  touchEndX = event.changedTouches[0].screenX;
+  
+  // Определяем направление свайпа
+  if (touchStartX > touchEndX + 30) {
+    // Свайп влево
+    moveSlide(1);
+  } else if (touchStartX < touchEndX - 30) {
+    // Свайп вправо
+    moveSlide(-1);
+  }
+});
