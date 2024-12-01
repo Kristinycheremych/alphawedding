@@ -61,7 +61,7 @@
   font-family: "Miama Nueva";
 }
 
-.price-label-en{
+.price-label-en {
   position: absolute;
   right: 10px;
   top: 455px;
@@ -128,7 +128,7 @@
 
 .price-two-label {
   position: absolute;
-  right: 10px;
+  right: 8px;
   top: 255px;
   font-size: 32px;
   color: var(--gold150);
@@ -137,7 +137,7 @@
 
 .price-two-label-en {
   position: absolute;
-  right: 10px;
+  right: 8px;
   top: 255px;
   font-size: 24px;
   color: var(--gold150);
@@ -183,8 +183,8 @@
 
 .price-three-label {
   position: absolute;
-  right: 10px;
-  top: 55px;
+  right: 5px;
+  top: 43px;
   font-size: 32px;
   color: var(--gold150);
   font-family: "Miama Nueva";
@@ -192,8 +192,8 @@
 
 .price-three-label-en {
   position: absolute;
-  right: 15px;
-  top: 55px;
+  right: 5px;
+  top: 50px;
   font-size: 24px;
   color: var(--gold150);
   font-family: "Miama Nueva";
@@ -201,12 +201,13 @@
 
 /* для десктопа */
 @media (max-width: 1024px) {
-  #services, #services-us{
+  #services,
+  #services-us {
     position: relative;
     padding-top: 72px; /* Отступ для контента */
     margin-top: -72px; /* Компенсация для якорной ссылки */
   }
-  
+
   .services-container {
     padding: 64px 24px 48px 24px;
   }
@@ -268,7 +269,7 @@
   }
 
   .price-three-label {
-    top: 90px;
+    top: 95px;
   }
   .price-three-label-en {
     top: 95px;
@@ -277,12 +278,13 @@
 
 /* для мобильных устройств */
 @media (max-width: 938px) {
-  #services, #services-us{
+  #services,
+  #services-us {
     position: relative;
     padding-top: 72px; /* Отступ для контента */
     margin-top: -72px; /* Компенсация для якорной ссылки */
   }
-  
+
   .services-container {
     padding: 32px 16px 24px 16px;
   }
@@ -297,6 +299,7 @@
 
   .services-text p {
     font-size: 15px;
+    padding-bottom: 20px;
   }
 
   .services-subtitle {
@@ -309,6 +312,7 @@
     flex-direction: column;
     grid-template-columns: 1fr;
     padding-top: 24px;
+    gap: 0;
   }
 
   .services-images {
@@ -339,12 +343,12 @@
     order: 1;
     max-width: 330px;
     min-height: 300px;
-    content: url('../assets/images/services/services-image1.png');
+    content: url("../assets/images/services/services-image1.png");
   }
 
   .services-images img:nth-child(2) {
     order: 3;
-    content: url('../assets/images/services/services-image-mobile2.png');
+    content: url("../assets/images/services/services-image-mobile2.png");
   }
 
   .services-images img:nth-child(3) {
@@ -380,6 +384,9 @@
     color: var(--gold150);
     font-family: "Miama Nueva";
     order: 2;
+    height: 35px;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   /* Второй блок услуг */
@@ -407,7 +414,7 @@
 
   .services-two-images img:nth-child(1) {
     order: 1;
-    content: url('../assets/images/services/services-image-mobile4.png');
+    content: url("../assets/images/services/services-image-mobile4.png");
   }
 
   .services-two-images img:nth-child(2) {
@@ -418,7 +425,7 @@
 
   .services-two-images img:nth-child(3) {
     order: 2;
-    content: url('../assets/images/services/services-image-mobile5.png');
+    content: url("../assets/images/services/services-image-mobile5.png");
   }
 
   .services-two-images img:nth-child(1),
@@ -462,12 +469,12 @@
 
   .services-three-images img:nth-child(2) {
     order: 1;
-    content: url('../assets/images/services/services-image-mobile7.png');
+    content: url("../assets/images/services/services-image-mobile7.png");
   }
 
   .services-three-images img:nth-child(3) {
     order: 3;
-    content: url('../assets/images/services/services-image-mobile9.png');
+    content: url("../assets/images/services/services-image-mobile9.png");
   }
 
   .services-three-images img:nth-child(2),

@@ -278,6 +278,7 @@
   .venues-content {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 0;
   }
   .venues-header-mob {
     display: flex;
@@ -285,6 +286,7 @@
     font-family: "Cormorant Infant";
     color: var(--gold150);
     font-weight: 400;
+    margin-bottom: 24px;
   }
   .venues-text h3 {
     display: none;
@@ -310,6 +312,9 @@
     font-size: 16px;
     font-family: "Miama Nueva";
     color: var(--gold150);
+    height: 35px;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   .venues-text {
