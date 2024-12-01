@@ -322,8 +322,16 @@
     font-weight: 400;
   }
 
+  .blok-header h1 {
+    font-size: 28px;
+    text-transform: none;
+    padding: 0;
+    padding-bottom: 24px;
+  }
+
   .blok-header p {
     font-size: 15px;
+    padding-bottom: 24px;
   }
 
   /* Размер меню для мобилки */

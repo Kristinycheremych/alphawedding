@@ -125,8 +125,8 @@
   #reviews,
   #reviews-en {
     position: relative;
-    padding-top: 72px; /* Отступ для контента */
-    margin-top: -72px; /* Компенсация для якорной ссылки */
+    padding-top: 0; /* Отступ для контента */
+    margin-top: 0; /* Компенсация для якорной ссылки */
   }
   .reviews-container h2 {
     padding-bottom: 24px;
