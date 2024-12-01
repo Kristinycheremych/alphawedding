@@ -1,4 +1,5 @@
 .reviews-container {
+  position: relative;
   padding: 96px 48px 64px 48px;
   text-align: center;
 }
@@ -7,18 +8,28 @@
   padding-bottom: 48px;
 }
 
-.review-slide {
+.reviews-slider {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  display: none;
-  transition: opacity 0.5s ease-in-out;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.review-slide {
+  position: absolute;
+  display: flex;
   align-items: center;
-  padding-bottom: 48px;
+  padding-bottom: 40px;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 1s ease, visibility 0s 1s, opacity 1s ease;
 }
 
 .review-slide.active {
-  display: flex;
+  position: relative;
+  visibility: visible;
   opacity: 1;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .review-img {
@@ -26,7 +37,8 @@
 }
 
 .review-content {
-  width: 774px;
+  display: flex;
+  width: 100%;
   height: auto;
   padding: 32px 40px;
   background: var(--peach50);
@@ -85,12 +97,13 @@
 }
 
 @media (max-width: 1024px) {
-  #reviews, #reviews-en{
+  #reviews,
+  #reviews-en {
     position: relative;
     padding-top: 72px; /* Отступ для контента */
     margin-top: -72px; /* Компенсация для якорной ссылки */
   }
-  
+
   .reviews-container {
     padding: 64px 24px 48px 24px;
   }
@@ -109,10 +122,14 @@
 }
 
 @media (max-width: 865px) {
-  #reviews, #reviews-en{
+  #reviews,
+  #reviews-en {
     position: relative;
     padding-top: 72px; /* Отступ для контента */
     margin-top: -72px; /* Компенсация для якорной ссылки */
+  }
+  .reviews-container h2 {
+    padding-bottom: 24px;
   }
 
   .reviews-container {
@@ -129,15 +146,20 @@
     position: relative;
   }
 
-  .reviews-container h2 {
-    padding-bottom: 24px;
-  }
-
   .review-slide {
+    position: absolute;
     padding-bottom: 24px;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .review-slide.active {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
   }
 
   .review-img {
@@ -159,7 +181,7 @@
   }
 
   .review-subtitle {
-    font-size: 18px;
+    font-size: 24px;
     padding-bottom: 16px;
   }
 

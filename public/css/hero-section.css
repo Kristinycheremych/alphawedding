@@ -33,13 +33,7 @@
   cursor: pointer;
   background: none;
   border: none;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--black100);
-  border-radius: 2px;
+  font-size: 25px;
 }
 
 .hero-section {
@@ -98,7 +92,7 @@
   display: flex;
   gap: 10px;
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   background: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -175,6 +169,19 @@
 
   .menu-toggle {
     display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .menu-icon{
+    width: 24px;
+    height: 24px;
+  }
+
+  #language-switcher button{
+    font-size: 15px;
   }
 
   .language-container {
@@ -256,14 +263,6 @@
   /* Убираем синюю обводку на некоторых браузерах */
   .menu-mobile ul li a:focus-visible {
     outline: none;
-  }
-
-  /* Стили для кнопки меню */
-  .menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
   }
 
   /* Скрываем иконки по умолчанию */

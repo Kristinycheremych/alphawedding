@@ -6,11 +6,7 @@ function currentSlide(n) {
   showSlides((slideIndex = n));
 }
 
-// Функция для перемещения слайда влево/вправ
-function moveSlide(n) {
-  showSlides((slideIndex += n));
-}
-
+// Функция для отображения слайдов
 function showSlides(n) {
   let slides = document.querySelectorAll(".review-slide");
   let dots = document.querySelectorAll(".nav-dot");
@@ -33,29 +29,45 @@ function showSlides(n) {
   }
 
   // Убираем класс "active" со всех слайдов и точек
-  slides.forEach((slide) => slide.classList.remove("active"));
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+    slide.style.opacity = 0; // Прячем все слайды
+  });
+
   dots.forEach((dot) => dot.classList.remove("active"));
 
-  // Проверяем, что slideIndex корректен
+  // Добавляем класс "active" для текущего слайда и точки
   if (slides[slideIndex - 1]) {
     slides[slideIndex - 1].classList.add("active");
+    slides[slideIndex - 1].style.opacity = 1; // Делаем слайд видимым
   } else {
     console.error("Не удалось найти слайд с индексом " + (slideIndex - 1));
   }
 
-  // Проверяем, что точки навигации корректны
   if (dots[slideIndex - 1]) {
     dots[slideIndex - 1].classList.add("active");
   } else {
-    console.error(
-      "Не удалось найти точку навигации с индексом " + (slideIndex - 1)
-    );
+    console.error("Не удалось найти точку навигации с индексом " + (slideIndex - 1));
   }
 }
 
+// Функция для автоматического переключения слайдов
+function autoSlide() {
+  slideIndex++;
+  showSlides(slideIndex);
+}
+
+// Интервал для автоматического переключения слайдов (каждые 5 секунд)
+setInterval(autoSlide, 5000);
+
 // Добавление функционала для жестов
-let touchStartX = 0; // Начальная позиция касания
-let touchEndX = 0;   // Конечная позиция касания
+let touchStartX = 0; 
+let touchEndX = 0;   
+
+// Функция для перемещения слайда влево/вправ
+function moveSlide(n) {
+  showSlides((slideIndex += n));
+}
 
 // Обработчик события начала касания
 document.addEventListener("touchstart", (event) => {
@@ -65,7 +77,7 @@ document.addEventListener("touchstart", (event) => {
 // Обработчик события завершения касания
 document.addEventListener("touchend", (event) => {
   touchEndX = event.changedTouches[0].screenX;
-  
+
   // Определяем направление свайпа
   if (touchStartX > touchEndX + 30) {
     // Свайп влево
