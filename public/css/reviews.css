@@ -39,7 +39,7 @@
 .review-content {
   display: flex;
   width: 100%;
-  height: auto;
+  height: 360px;
   padding: 32px 40px;
   background: var(--peach50);
   box-shadow: -4px 4px 12px 0px var(--shadow, rgba(70, 47, 47, 0.15));
@@ -100,12 +100,17 @@
   #reviews,
   #reviews-en {
     position: relative;
-    padding-top: 72px; /* Отступ для контента */
-    margin-top: -72px; /* Компенсация для якорной ссылки */
+    padding-top: 72px; 
+    margin-top: -72px; 
+    pointer-events: none;
   }
 
   .reviews-container {
     padding: 64px 24px 48px 24px;
+  }
+
+  .review-content {
+    height: 400px;
   }
 
   .reviews-container h2 {
@@ -122,12 +127,6 @@
 }
 
 @media (max-width: 865px) {
-  #reviews,
-  #reviews-en {
-    position: relative;
-    padding-top: 0; /* Отступ для контента */
-    margin-top: 0; /* Компенсация для якорной ссылки */
-  }
   .reviews-container h2 {
     padding-bottom: 24px;
   }
@@ -136,7 +135,6 @@
     padding: 24px 16px;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .reviews-slider {
@@ -150,7 +148,6 @@
     position: absolute;
     padding-bottom: 24px;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     visibility: hidden;
     opacity: 0;
@@ -174,8 +171,8 @@
   .review-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 300px;
+
+    height: 340px;
     width: 100%;
     padding: 20px 16px;
   }

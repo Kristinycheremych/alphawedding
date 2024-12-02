@@ -43,6 +43,7 @@
     position: relative;
     padding-top: 72px; /* Отступ для контента */
     margin-top: -72px; /* Компенсация для якорной ссылки */
+    pointer-events: none;
   }
   .about-content {
     padding: 0;
@@ -56,6 +57,7 @@
 }
 
 @media (max-width: 924px) {
+
   .about-container {
     padding: 32px 16px 24px 16px;
   }
@@ -86,12 +88,7 @@
   }
 }
 
-@media (max-width: 400px) {
-  #about, #about-en {
-    position: relative;
-    padding-top: 0; /* Отступ для контента */
-    margin-top: 0; /* Компенсация для якорной ссылки */
-  }
+@media (max-width: 420px) {
   .about-content {
     display: grid;
     grid-template-columns: 1fr;

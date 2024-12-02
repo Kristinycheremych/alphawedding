@@ -31,9 +31,8 @@
 
 .swiper-slide-card h3 {
     color: var(--gold150);
-    font-weight: 700;
     margin-bottom: 12px;
-    font-family: "Montserrat";
+    font-family:  "MontserratBold", sans-serif;
     font-size: calc(15px + (20 - 15) * ((100vw - 375px) / (1440 - 375)));
 }
 
@@ -52,6 +51,9 @@
 
     .swiper-wrapper {
         gap: 20px;
+    }
+    .wiper-slide{
+        height: 244px;
     }
 
     .questions-container h1 {

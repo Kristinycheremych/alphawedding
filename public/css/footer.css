@@ -29,7 +29,7 @@
 }
 
 .content-contacts a:hover {
-  text-decoration: underline;
+  color: var(--golg100);
 }
 
 .footer-content p {

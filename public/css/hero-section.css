@@ -22,6 +22,14 @@
   color: var(--black100);
 }
 
+.menu ul li a:hover {
+  color: var(--golg100);
+}
+
+.menu ul li a:active {
+  text-decoration: underline;
+}
+
 .menu.active {
   display: block; /* Показываем меню при активации */
 }
@@ -99,6 +107,10 @@
   border: none;
   font-weight: 700;
   color: var(--black100);
+}
+
+#language-switcher button:hover{
+  color: var(--golg100);
 }
 
 /* Скрываю моб меню */
@@ -240,29 +252,15 @@
     font-size: 20px;
     color: var(--black100);
     transition: color 0.3s ease;
-
-    /* Убираем стандартное поведение ссылки при нажатии */
     text-decoration: none;
   }
 
-  /* Состояние для активных ссылок */
-  .menu-mobile ul li a.active {
-    color: var(--gold150);
+  .menu-mobile ul li a:hover{
+    color: var(--golg100);
   }
 
-  /* Состояние при активном клике на ссылку (во время нажатия) */
   .menu-mobile ul li a:active {
-    color: var(--gold150);
-  }
-
-  /* Состояние при фокусе (для клавиатуры или при переходе фокуса) */
-  .menu-mobile ul li a:focus {
-    color: var(--black); 
-  }
-
-  /* Убираем синюю обводку на некоторых браузерах */
-  .menu-mobile ul li a:focus-visible {
-    outline: none;
+    text-decoration: underline;
   }
 
   /* Скрываем иконки по умолчанию */

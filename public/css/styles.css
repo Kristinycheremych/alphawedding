@@ -7,11 +7,18 @@
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/font-family/Montserrat-Regular.woff2"),
-    url("/font-family/Montserrat-Bold.woff2") format("woff2");
+  src: url("/font-family/Montserrat-Regular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "MontserratBold";
+  src: url("/font-family/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Miama Nueva";
   src: url("/font-family/MiamaNueva.woff2") format("woff2");
@@ -42,6 +49,7 @@ ol {
 }
 a {
   text-decoration: none;
+  transition: ease-in 0.25s;
 }
 :root {
   --white: #ffffff;
@@ -99,23 +107,21 @@ hr {
 .consultation-button {
   width: 318px;
   height: 66px;
-  border: 1px solid var(--gold150);
+  border: 1px solid var(--black100);
   background: var(--peach50);
   color: var(--black100);
+  font-family: Montserrat;
+  font-weight: 400;
   font-size: 20px;
   cursor: pointer;
 }
 
 .consultation-button:hover {
-  background: var(--white);
-  border: 1px solid var(--black100);
-  color: var(--black100);
+  background: var(--pink100);
 }
 
-.consultation-button:active {
-  background: var(--black100);
-  border: 1px solid var(--black);
-  color: var(--peach50);
+.consultation-button:focus {
+  background: var(--peach100);
 }
 
 @media (max-width: 1024px) {

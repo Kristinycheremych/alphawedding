@@ -61,10 +61,42 @@
 .form-group input[type="text"],
 .form-group input[type="tel"] {
   padding: 20px;
-  border: 1px solid var(--gray100);
-  font-family: Montserrat;
+  font-family: "Montserrat";
+  color: var(--gray100);
   font-size: 20px;
   width: 100%;
+  color: var(--black);
+  border: 1px solid var(--gray100);
+}
+
+/* Стили при фокусе */
+.form-group input[type="text"]:focus,
+.form-group input[type="tel"]:focus {
+  border-radius: 0; 
+  border: 1px solid var(--black); 
+  outline: none;
+  opacity: 1; /* Убираем прозрачность */
+  color: var(--black);
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="tel"]::placeholder {
+  opacity: 0.5;
+}
+
+.form-group input[type="text"]:focus::placeholder,
+.form-group input[type="tel"]:focus::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+input:focus-visible {
+  outline: none;
+}
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+  font-size: 15px; /* Меньший шрифт */
+  transform: scale(1); /* Принудительное предотвращение масштабирования */
 }
 
 .iti {
