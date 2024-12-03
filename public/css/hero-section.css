@@ -107,6 +107,7 @@
   border: none;
   font-weight: 700;
   color: var(--black100);
+  transition: ease-in 0.25s;
 }
 
 #language-switcher button:hover{

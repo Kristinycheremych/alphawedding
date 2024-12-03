@@ -274,6 +274,8 @@
   }
   .header-mob{
     display: block;
+    font-size: 28px;
+    width: 343px;
   }
   .venues-content {
     display: grid;

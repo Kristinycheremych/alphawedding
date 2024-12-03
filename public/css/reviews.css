@@ -97,13 +97,12 @@
 }
 
 @media (max-width: 1024px) {
-  #reviews,
+  /* #reviews,
   #reviews-en {
     position: relative;
     padding-top: 72px; 
     margin-top: -72px; 
-    pointer-events: none;
-  }
+  } */
 
   .reviews-container {
     padding: 64px 24px 48px 24px;
