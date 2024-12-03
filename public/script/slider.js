@@ -58,7 +58,7 @@ function autoSlide() {
 }
 
 // Интервал для автоматического переключения слайдов (каждые 5 секунд)
-setInterval(autoSlide, 5000);
+setInterval(autoSlide, 10000);
 
 // Добавление функционала для жестов
 let touchStartX = 0; 

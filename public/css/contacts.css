@@ -105,12 +105,12 @@ input:focus-visible {
 }
 
 .error {
-  position: absolute;
   color: var(--black100);
-  font-size: 20px;
+  font-size: 18px;
   display: none;
   font-family: Montserrat;
-  padding-top: 5px;
+  margin-top: -20px;
+  padding-bottom: 10px;
 }
 
 .contact-form button {
@@ -209,7 +209,7 @@ input:focus-visible {
   }
 
   .contact-info {
-    padding-bottom: 16px;
+    margin-bottom: 16px;
   }
 
   .contact-info h2 {
@@ -245,7 +245,11 @@ input:focus-visible {
 
   .error {
     font-size: 15px;
-    padding-top: 2px;
+    padding-bottom: 5px;
+  }
+  
+  .name{
+    padding-top: 16px;
   }
 
   .contact-form button {

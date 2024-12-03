@@ -27,8 +27,8 @@ function initContactForm() {
   if (form) {
     const nameInput = document.getElementById("name");
     const phoneInput = document.getElementById("phone");
-    const nameError = document.getElementById("nameError");
-    const phoneError = document.getElementById("phoneError");
+    const nameError = document.getElementById("nameErrorEn");
+    const phoneError = document.getElementById("phoneErrorEn");
 
     const iti = window.intlTelInput(phoneInput, {
       autoPlaceholder: "aggressive",
@@ -53,7 +53,7 @@ function initContactForm() {
         phoneError.style.display = "none";
       } else {
         phoneError.style.display = "block";
-        phoneError.textContent = "Введите корректный номер телефона";
+        phoneError.textContent = "Enter the correct phone number";
       }
     });
 
@@ -62,7 +62,7 @@ function initContactForm() {
 
       if (!nameInput.value.trim()) {
         nameError.style.display = "block";
-        nameError.textContent = "Введите ваше имя";
+        nameError.textContent = "Please enter your name";
         isValid = false;
       } else {
         nameError.style.display = "none";
@@ -70,7 +70,7 @@ function initContactForm() {
 
       if (!iti.isValidNumber()) {
         phoneError.style.display = "block";
-        phoneError.textContent = "Введите корректный номер телефона";
+        phoneError.textContent = "Enter the correct number";
         isValid = false;
       } else {
         phoneError.style.display = "none";
