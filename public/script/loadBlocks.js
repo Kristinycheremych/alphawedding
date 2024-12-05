@@ -1,4 +1,4 @@
-// Упрощенная функция для загрузки блоков HTML
+// Упрощенная функция для загрузки блоков HTML с асинхронной обработкой
 async function loadBlock(blockId, filePath, callback = () => {}) {
   try {
     const response = await fetch(filePath);
@@ -195,8 +195,11 @@ function loadAllBlocks() {
     },
   ];
 
+  // Загрузка блоков с улучшенной производительностью
   blocks.forEach((block) => loadBlock(block.id, block.path, block.callback));
 }
 
 // Инициализируем загрузку всех блоков
-loadAllBlocks();
+document.addEventListener("DOMContentLoaded", () => {
+  loadAllBlocks();
+});
