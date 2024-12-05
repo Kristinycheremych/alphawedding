@@ -146,11 +146,7 @@ function loadAllBlocks() {
     { id: "about", path: "components/about/about.html" },
     { id: "questions", path: "components/questions/questions.html" },
     { id: "services", path: "components/services/services.html" },
-    {
-      id: "contacts",
-      path: "components/contacts/contacts.html",
-      callback: initContactForm,
-    },
+    
     { id: "venues", path: "components/venues/venues.html" },
     {
       id: "recommendation",
@@ -159,6 +155,50 @@ function loadAllBlocks() {
     { id: "reviews", path: "components/reviews/reviews.html" },
     { id: "partners", path: "components/partners/partners.html" },
     { id: "footer", path: "components/footer/footer.html" },
+    {
+      id: "contacts",
+      path: "components/contacts/contacts.html",
+      callback: () => {
+        initContactForm();
+    
+        const scrollToContacts = document.getElementById("scroll-to-contacts");
+        const scrollToContactsMob = document.querySelector("#scroll-to-contacts-mob");
+        const contactsSection = document.getElementById("contacts");
+    
+        // Функция для плавной прокрутки
+        const scrollToContactSection = (event) => {
+          event.preventDefault();
+          contactsSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center", // Прокручивает к центру блока
+          });
+        };
+    
+        // Добавляем обработчики для кнопок с id (например, для desktop)
+        if (scrollToContacts && contactsSection) {
+          scrollToContacts.addEventListener("click", scrollToContactSection);
+        }
+    
+        // Добавляем обработчик для кнопок на мобильных устройствах
+        if (scrollToContactsMob && contactsSection) {
+          scrollToContactsMob.addEventListener("click", scrollToContactSection);
+        }
+    
+        // Находим все кнопки и ссылки с якорем #contacts или атрибутом data-scroll-to="contacts"
+        const contactLinks = document.querySelectorAll('a[href="#contacts"], button[data-scroll-to="contacts"]');
+    
+        // Добавляем обработчик для всех таких ссылок и кнопок
+        contactLinks.forEach((link) => {
+          link.addEventListener("click", scrollToContactSection);
+        });
+    
+        // Теперь добавим обработчик для всех ссылок с якорем #contacts
+        const allAnchorLinks = document.querySelectorAll('a[href="#contacts"]');
+        allAnchorLinks.forEach((anchor) => {
+          anchor.addEventListener("click", scrollToContactSection);
+        });
+      },
+    },
   ];
 
   blocks.forEach((block) => loadBlock(block.id, block.path, block.callback));

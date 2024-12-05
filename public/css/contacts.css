@@ -1,4 +1,5 @@
 ._container-contact {
+  position: relative;
   width: min(100%);
   margin: 0 auto;
   background: var(--peach50);
@@ -46,6 +47,10 @@
   text-decoration: underline;
 }
 
+.info-network a:hover {
+  color: var(--golg100);
+}
+
 .contact-form {
   max-width: 546px;
   display: flex;
@@ -72,8 +77,8 @@
 /* Стили при фокусе */
 .form-group input[type="text"]:focus,
 .form-group input[type="tel"]:focus {
-  border-radius: 0; 
-  border: 1px solid var(--black); 
+  border-radius: 0;
+  border: 1px solid var(--black);
   outline: none;
   opacity: 1; /* Убираем прозрачность */
   color: var(--black);
@@ -178,7 +183,12 @@ input:focus-visible {
   color: var(--black100);
   font-size: 16px;
   font-family: "Montserrat";
+  transition: ease-in 0.25s;
   text-decoration: underline;
+}
+
+.content-text a:hover {
+  color: var(--golg100);
 }
 
 .icon-cross {
@@ -224,7 +234,6 @@ input:focus-visible {
   .info-network,
   .info-network a {
     font-size: 12px;
-    text-decoration: none;
   }
 
   .contact-form {
@@ -247,8 +256,8 @@ input:focus-visible {
     font-size: 15px;
     padding-bottom: 5px;
   }
-  
-  .name{
+
+  .name {
     padding-top: 16px;
   }
 
