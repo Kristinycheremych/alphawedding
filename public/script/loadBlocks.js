@@ -172,34 +172,57 @@ function loadAllBlocks() {
       id: "contacts",
       path: "components/contacts/contacts.html",
       callback: () => {
-        initContactForm();
+        initContactForm();  // Инициализация контактной формы
 
-        // Устанавливаем обработчики для прокрутки
-        const scrollToContacts = document.getElementById("scroll-to-contacts");
-        const scrollToContactsMob = document.querySelector("#scroll-to-contacts-mob");
-        
-        if (scrollToContacts) {
-          scrollToContacts.addEventListener("click", scrollToContactSection);
-        }
-        
-        if (scrollToContactsMob) {
-          scrollToContactsMob.addEventListener("click", scrollToContactSection);
-        }
-        
-        // Обработчик для всех кнопок/ссылок с якорем #contacts
-        const contactLinks = document.querySelectorAll('a[href="#contacts"], button[data-scroll-to="contacts"]');
-        contactLinks.forEach((link) => {
-          link.addEventListener("click", scrollToContactSection);
-        });
+        // После загрузки блока "contacts", устанавливаем обработчики для прокрутки
+        addScrollEventListeners();
       },
     },
   ];
 
   // Загрузка блоков с улучшенной производительностью
-  blocks.forEach((block) => loadBlock(block.id, block.path, block.callback));
+  Promise.all(blocks.map(block => loadBlock(block.id, block.path, block.callback)))
+    .then(() => {
+      console.log('Все блоки загружены!');
+      // Можно добавить дополнительные действия после полной загрузки всех блоков, если необходимо
+    })
+    .catch(err => console.error('Ошибка при загрузке блоков:', err));
 }
 
-// Инициализируем загрузку всех блоков
+// Функция для добавления обработчиков прокрутки
+function addScrollEventListeners() {
+  // Устанавливаем обработчики для прокрутки
+  const scrollToContacts = document.getElementById("scroll-to-contacts");
+  const scrollToContactsMob = document.querySelector("#scroll-to-contacts-mob");
+  
+  if (scrollToContacts) {
+    scrollToContacts.addEventListener("click", scrollToContactSection);
+  }
+  
+  if (scrollToContactsMob) {
+    scrollToContactsMob.addEventListener("click", scrollToContactSection);
+  }
+  
+  // Обработчик для всех кнопок/ссылок с якорем #contacts
+  const contactLinks = document.querySelectorAll('a[href="#contacts"], button[data-scroll-to="contacts"]');
+  contactLinks.forEach((link) => {
+    link.addEventListener("click", scrollToContactSection);
+  });
+}
+
+// Функция для плавной прокрутки
+function scrollToContactSection(event) {
+  event.preventDefault();
+  const contactsSection = document.getElementById("contacts");
+  if (contactsSection) {
+    contactsSection.scrollIntoView({
+      behavior: "smooth",
+      block: "center", // Прокручивает к центру блока
+    });
+  }
+}
+
+// Инициализируем загрузку всех блоков после загрузки DOM
 document.addEventListener("DOMContentLoaded", () => {
   loadAllBlocks();
 });
