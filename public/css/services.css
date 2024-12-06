@@ -309,7 +309,12 @@
     order: 2;
   }
 
-  .services-text p {
+  .services-text .text-item1{
+    font-size: 15px;
+    padding-bottom: 16px;
+  }
+
+  .services-text .text-item2 {
     font-size: 15px;
     padding-bottom: 20px;
   }

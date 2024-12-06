@@ -67,6 +67,10 @@
         padding: 32px 16px 24px 16px;
     }
 
+    .questions-header{
+      padding-bottom: 12px;
+    }
+
     .swiper-container {
         padding: 20px 10px;
         overflow-x: auto;

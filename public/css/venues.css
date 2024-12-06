@@ -47,6 +47,9 @@
 .cost p {
   padding-bottom: 8px;
 }
+.cost p:last-child {
+  padding-bottom: 0; /* убираем padding у последнего элемента */
+}
 
 :is(.item1, .item2, .item3) {
   padding: 0 16px;
@@ -247,6 +250,9 @@
     padding-top: 72px; /* Отступ для контента */
     margin-top: -72px; /* Компенсация для якорной ссылки */
   }
+  .venues-container{
+    padding: 64px 24px 48px 24px;
+  }
   .venues-content {
     padding: 0;
   }
@@ -305,6 +311,12 @@
   .venues-text h3 {
     display: none;
   }
+  .venues-description p{
+    padding-bottom: 16px;
+  }
+  .venues-description p:last-child {
+    padding-bottom: 24px;
+  }
   .venues-images,
   .venues-images-item2,
   .venues-images-item3,
@@ -340,9 +352,7 @@
   .venues-description p, .cost p{
     font-size: 15px;
   }
-  .venues-description p {
-    padding-bottom: 16px;
-  }
+
 
   /* первый блок */
   .venues-images {

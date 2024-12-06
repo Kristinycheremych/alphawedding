@@ -149,6 +149,9 @@ input:focus-visible {
   .contact-section {
     padding: 0;
   }
+  .info-title {
+    padding-bottom: 24px;
+  }
 }
 
 /* Сообщение после успешной отправки */
