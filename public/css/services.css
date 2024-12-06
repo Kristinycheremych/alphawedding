@@ -203,6 +203,14 @@
   font-family: "Miama Nueva";
 }
 
+#services,
+#services-us {
+  position: relative;
+  padding-top: 100px; /* Отступ для контента */
+  margin-top: -100px; /* Компенсация для якорной ссылки */
+}
+
+
 /* для десктопа */
 @media (max-width: 1024px) {
   #services,

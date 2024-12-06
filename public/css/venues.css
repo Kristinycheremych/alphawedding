@@ -235,6 +235,12 @@
   color: var(--gold150);
 }
 
+#venues, #venues-en{
+  position: relative;
+  padding-top: 100px; /* Отступ для контента */
+  margin-top: -100px; /* Компенсация для якорной ссылки */
+}
+
 @media (max-width: 1024px) {
   #venues, #venues-en{
     position: relative;

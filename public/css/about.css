@@ -38,6 +38,13 @@
   right: 0;
 }
 
+#about, #about-en {
+  position: relative;
+  padding-top: 100px; /* Отступ для контента */
+  margin-top: -100px; /* Компенсация для якорной ссылки */
+  pointer-events: none;
+}
+
 @media (max-width: 1024px) {
   #about, #about-en {
     position: relative;
