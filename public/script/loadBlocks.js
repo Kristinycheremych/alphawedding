@@ -157,6 +157,50 @@ function scrollToContactSection(event) {
 function loadAllBlocks() {
   const blocks = [
     { id: "hero-section", path: "components/hero-section/hero-section.html" },
+    {
+      id: "contacts",
+      path: "components/contacts/contacts.html",
+      callback: () => {
+        initContactForm(); // Инициализация контактной формы
+
+        const scrollToContacts = document.getElementById("scroll-to-contacts");
+        const scrollToContactsMob = document.querySelector("#scroll-to-contacts-mob");
+        const contactsSection = document.getElementById("contacts");
+    
+        // Функция для плавной прокрутки
+        const scrollToContactSection = (event) => {
+          event.preventDefault();
+          contactsSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center", // Прокручивает к центру блока
+          });
+        };
+    
+        // Добавляем обработчики для кнопок с id (например, для desktop)
+        if (scrollToContacts && contactsSection) {
+          scrollToContacts.addEventListener("click", scrollToContactSection);
+        }
+    
+        // Добавляем обработчик для кнопок на мобильных устройствах
+        if (scrollToContactsMob && contactsSection) {
+          scrollToContactsMob.addEventListener("click", scrollToContactSection);
+        }
+    
+        // Находим все кнопки и ссылки с якорем #contacts или атрибутом data-scroll-to="contacts"
+        const contactLinks = document.querySelectorAll('a[href="#contacts"], button[data-scroll-to="contacts"]');
+    
+        // Добавляем обработчик для всех таких ссылок и кнопок
+        contactLinks.forEach((link) => {
+          link.addEventListener("click", scrollToContactSection);
+        });
+    
+        // Теперь добавим обработчик для всех ссылок с якорем #contacts
+        const allAnchorLinks = document.querySelectorAll('a[href="#contacts"]');
+        allAnchorLinks.forEach((anchor) => {
+          anchor.addEventListener("click", scrollToContactSection);
+        });
+      },
+    },
     { id: "about", path: "components/about/about.html" },
     { id: "questions", path: "components/questions/questions.html" },
     { id: "services", path: "components/services/services.html" },
@@ -168,61 +212,9 @@ function loadAllBlocks() {
     { id: "reviews", path: "components/reviews/reviews.html" },
     { id: "partners", path: "components/partners/partners.html" },
     { id: "footer", path: "components/footer/footer.html" },
-    {
-      id: "contacts",
-      path: "components/contacts/contacts.html",
-      callback: () => {
-        initContactForm();  // Инициализация контактной формы
-
-        // После загрузки блока "contacts", устанавливаем обработчики для прокрутки
-        addScrollEventListeners();
-      },
-    },
+    
   ];
-
-  // Загрузка блоков с улучшенной производительностью
-  Promise.all(blocks.map(block => loadBlock(block.id, block.path, block.callback)))
-    .then(() => {
-      console.log('Все блоки загружены!');
-      // Можно добавить дополнительные действия после полной загрузки всех блоков, если необходимо
-    })
-    .catch(err => console.error('Ошибка при загрузке блоков:', err));
+  blocks.forEach((block) => loadBlock(block.id, block.path, block.callback));
 }
 
-// Функция для добавления обработчиков прокрутки
-function addScrollEventListeners() {
-  // Устанавливаем обработчики для прокрутки
-  const scrollToContacts = document.getElementById("scroll-to-contacts");
-  const scrollToContactsMob = document.querySelector("#scroll-to-contacts-mob");
-  
-  if (scrollToContacts) {
-    scrollToContacts.addEventListener("click", scrollToContactSection);
-  }
-  
-  if (scrollToContactsMob) {
-    scrollToContactsMob.addEventListener("click", scrollToContactSection);
-  }
-  
-  // Обработчик для всех кнопок/ссылок с якорем #contacts
-  const contactLinks = document.querySelectorAll('a[href="#contacts"], button[data-scroll-to="contacts"]');
-  contactLinks.forEach((link) => {
-    link.addEventListener("click", scrollToContactSection);
-  });
-}
-
-// Функция для плавной прокрутки
-function scrollToContactSection(event) {
-  event.preventDefault();
-  const contactsSection = document.getElementById("contacts");
-  if (contactsSection) {
-    contactsSection.scrollIntoView({
-      behavior: "smooth",
-      block: "center", // Прокручивает к центру блока
-    });
-  }
-}
-
-// Инициализируем загрузку всех блоков после загрузки DOM
-document.addEventListener("DOMContentLoaded", () => {
-  loadAllBlocks();
-});
+loadAllBlocks();
