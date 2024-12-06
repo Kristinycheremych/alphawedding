@@ -283,7 +283,10 @@
     font-size: 28px;
     width: 343px;
   }
-  .venues-content {
+  .header-mob h2{
+    white-space: nowrap;
+  }
+  .venues-content { 
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
