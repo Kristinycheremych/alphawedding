@@ -157,6 +157,17 @@ function scrollToContactSection(event) {
 function loadAllBlocks() {
   const blocks = [
     { id: "hero-section", path: "components/hero-section/hero-section.html" },
+    { id: "about", path: "components/about/about.html" },
+    { id: "questions", path: "components/questions/questions.html" },
+    { id: "services", path: "components/services/services.html" },
+    { id: "venues", path: "components/venues/venues.html" },
+    {
+      id: "recommendation",
+      path: "components/recommendation/recommendation.html",
+    },
+    { id: "reviews", path: "components/reviews/reviews.html" },
+    { id: "partners", path: "components/partners/partners.html" },
+    { id: "footer", path: "components/footer/footer.html" },
     {
       id: "contacts",
       path: "components/contacts/contacts.html",
@@ -201,18 +212,6 @@ function loadAllBlocks() {
         });
       },
     },
-    { id: "about", path: "components/about/about.html" },
-    { id: "questions", path: "components/questions/questions.html" },
-    { id: "services", path: "components/services/services.html" },
-    { id: "venues", path: "components/venues/venues.html" },
-    {
-      id: "recommendation",
-      path: "components/recommendation/recommendation.html",
-    },
-    { id: "reviews", path: "components/reviews/reviews.html" },
-    { id: "partners", path: "components/partners/partners.html" },
-    { id: "footer", path: "components/footer/footer.html" },
-    
   ];
   blocks.forEach((block) => loadBlock(block.id, block.path, block.callback));
 }
