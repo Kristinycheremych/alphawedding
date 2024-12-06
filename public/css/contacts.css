@@ -223,6 +223,7 @@ input:focus-visible {
 
   .contact-info {
     margin-bottom: 16px;
+    min-width: 100%;
   }
 
   .contact-info h2 {
@@ -242,6 +243,7 @@ input:focus-visible {
   .contact-form {
     margin: 0 auto;
     padding: 0;
+    max-width: 100%;
   }
 
   .contact-form input[type="text"],
