@@ -331,6 +331,9 @@
     max-height: 422px;
     flex-shrink: 0;
     object-fit: cover;
+    /* width: 91.47vw; 
+    height: auto; 
+    max-height: 56.27vh; */
   }
 
   .content-container {
@@ -360,3 +363,10 @@
     font-size: 15px;
   }
 }
+
+@media (max-width: 375px){
+  .photo-container img {
+    min-width: 328px;
+  }
+}
+

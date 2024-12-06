@@ -286,6 +286,8 @@
   }
   .header-mob h2{
     white-space: nowrap;
+    font-size: 28px;
+    text-align: center;
   }
   .venues-content { 
     display: grid;
@@ -478,5 +480,15 @@
     padding: 0;
     position: static;
     object-fit: cover;
+  }
+}
+@media (max-width: 360px){
+  .header-desktop {
+    display: block;
+    font-size: 28px;
+    text-align: center;
+  }
+  .header-mob{
+    display: none;
   }
 }
