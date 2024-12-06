@@ -99,6 +99,6 @@
 
 @media screen and (-webkit-device-pixel-ratio: 2) and (hover: none) and (pointer: coarse) {
   .swiper-slide-card-number {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
