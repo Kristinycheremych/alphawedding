@@ -282,6 +282,7 @@
     display: block;
     font-size: 28px;
     width: 343px;
+    margin: 0 auto;
   }
   .header-mob h2{
     white-space: nowrap;
