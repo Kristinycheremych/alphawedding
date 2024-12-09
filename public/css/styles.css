@@ -231,7 +231,7 @@ hr {
 }
 .photo-container img {
   min-width: 432px;
-  height: 632px;
+  height: auto;
   flex-shrink: 0;
   object-fit: cover;
 }
@@ -471,6 +471,10 @@ hr {
 }
 
 @media (max-width: 526px) {
+  .photo-container{
+    max-height: 422px;
+  }
+  
   .photo-container img {
     min-width: 343px;
     max-height: 422px;
